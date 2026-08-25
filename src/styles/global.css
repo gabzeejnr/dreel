@@ -40,3 +40,15 @@
     background: #1D4ED8;
     border-color: #1D4ED8;
 }
+
+.h4{
+    font-size: 23.4px;
+}
+
+.mobile-pad{
+    padding: 0 20px 0 20px;
+}
+
+@media (min-widt) {
+    
+}

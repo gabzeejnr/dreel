@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom"
 import dReelLogo from "../assets/images/dreel-academy-logo.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import Button from "./Button";
 import { useState } from "react";
 
@@ -39,7 +39,7 @@ export default function Navbar() {
     return (
         <>
             {/* DESKTOP NAV */}
-            <nav className="hidden lg:flex fixed w-full h-15 justify-center top-8 text-white z-50">
+            <nav className="hidden lg:flex px-10 fixed w-full h-15 justify-center top-8 text-white z-50">
                 <div className="container h-full flex justify-between items-center">
                     <div className="left bg-[#202020] h-full flex items-center gap-10 rounded-4xl px-8">
                         <Link to="/home" className="h-full flex">
@@ -59,22 +59,26 @@ export default function Navbar() {
             </nav>
 
             {/* MOBILE NAV */}
-            <div className="fixed flex flex-col lg:hidden items-end z-50 w-full pt-2">
+            <div className="fixed flex flex-col lg:hidden items-end z-40 w-full pt-2">
                 <Button type="button" className="text-white bg-gray-900 cursor-pointer w-10 h-9 text-2xl"
                     onClick={toggleNavbar}>
                     <FontAwesomeIcon icon={faBars} />
                 </Button>
-                {isOpen && (
-                    <nav className="text-white z-50 w-full h-screen md:w-1/2 text-center flex flex-col bg-gray-800 py-2 transition-all duration-1000">
-                        {navItems.map(nav => (
-                            <NavLink to={nav.link} className="overflow-hidden py-2 border">{nav.text}</NavLink>
-                        ))}
-                        {smallNav.map(nav => (
-                            <NavLink to={nav.link} className={({ isActive }) => (`py-2 ${isActive ? "bg-blue" : ""}`)}>{nav.text}</NavLink>
-                        ))}
-                    </nav>
-                )}
             </div>
+            {isOpen && (
+                <nav className="lg:hidden flex flex-col fixed right-0 text-white z-50 w-full md:w-1/2 text-center bg-gray-800 py-2 transition-all duration-1000">
+                    <Button type="button" className="self-end mt-5 mr-4"
+                        onClick={toggleNavbar}>
+                        <FontAwesomeIcon icon={faX} className="transition-all duration-700 hover:rotate-360 text-2xl" />
+                    </Button>
+                    {navItems.map(nav => (
+                        <NavLink to={nav.link} className="overflow-hidden py-2">{nav.text}</NavLink>
+                    ))}
+                    {smallNav.map(nav => (
+                        <NavLink to={nav.link} className={({ isActive }) => (`py-2 ${isActive ? "bg-blue" : ""}`)}>{nav.text}</NavLink>
+                    ))}
+                </nav>
+            )}
         </>
     )
 }

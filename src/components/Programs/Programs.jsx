@@ -76,12 +76,13 @@ export default function Programs() {
     ]
 
     return (
-        <section className="text-center mt-15 pb-10">
-            <h3 className="font-semibold text-3xl mb-5">Our Programs</h3>
-            <p className="mb-4 text-[#1a1919] font-medium">Practical, instructor-led programs that prepare you for real-world cloud-native engineering roles.</p>
+        <section className="text-center mt-10 pb-10">
+            <h3 className="font-bold tracking-[1px] text-3xl mb-5">Our Programs</h3>
+            <p className="mb-8 text-gray-500 px-5">Practical, instructor-led programs that prepare you for real-world cloud-native engineering roles.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-5 transition-all duration-1000">
-                {cardInfo.slice(0, toggle).map((card) => (
-                    <div data-aos="zoom-in">
+                {cardInfo.slice(0, toggle).map((card, index) => (
+                    <div data-aos="zoom-in" data-aos-duration={index + 1 * 50}
+                    data-aos-delay={(index + 1) * 100}>
                         <ProgCards image={card.img} title={card.title} subtitle={card.subtitle} duration={card.duration} link={card.link} />
                     </div>
                 ))}
