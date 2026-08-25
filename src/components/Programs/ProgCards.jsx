@@ -1,0 +1,15 @@
+import { Link } from "react-router-dom";
+
+export default function ProgCards({ image, title, subtitle, duration, link }) {
+    return (
+        <div className="shadow-[0_0_4px_1px_#9993] h-full rounded-3xl p-4 flex flex-col items-center text-center program-card transition-all duration-500 hover:-translate-y-2">
+            <img src={image} alt={`${title} icon`} className="program-card-icon mb-4 w-18 h-18 object-contain block m-[0px auto 1rem] align-middle overflow-clip" />
+            <h3 className="font-bold mb-1">{title}</h3>
+            <p className="text-sm text-gray-500 mb-3">{subtitle}</p>
+            <div className="flex justify-center gap-3 font-semibold items-center text-[#1D4ED8]">
+                <span className="bg-[#1D4ED81F] opacity-90 p-[4.9px] rounded-lg">{duration}</span>
+                <Link to={link} className="font-[0.875em] hover:bg-[#1D4ED81F] p-[4.9px] rounded-lg">Learn more</Link>
+            </div>
+        </div>
+    )
+}

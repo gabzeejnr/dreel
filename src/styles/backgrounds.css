@@ -1,0 +1,37 @@
+.background-overlay {
+    background: rgba(0, 0, 0, .6);
+}
+
+
+#home-hero {
+    background: url('../assets/images/hero-img.jpg') center / cover no-repeat;
+}
+
+#home-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .1);
+}
+
+#home-enterprise {
+    background: url('../assets//images/dreel-academy-banner.png') center / cover no-repeat;
+}
+
+#home-enterprise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .6);
+}
+
+#footer {
+    background: url('../assets/images/hero-img.jpg') center / cover no-repeat;
+}
+
+/*  #footer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .6);
+} */
