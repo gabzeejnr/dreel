@@ -1,10 +1,10 @@
-import girl from "../../assets/images/hero-image.png"
 
-export default function RightImage() {
+
+export default function RightImage({ src }) {
     return (
         <div className="w-full rounded-4xl bg-white p-3"
             data-aos="fade-up">
-            <img src={girl} className="rounded-4xl" loading="eager" />
+            <img src={src} alt="Hero Secondary Image" className="rounded-4xl w-full h-auto max-h-105 object-cover" loading="eager" />
         </div>
     )
 }

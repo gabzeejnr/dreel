@@ -1,4 +1,4 @@
-import Info from "./Info"
+import Info from "../Info"
 import Button from "../Button"
 import Card from "./Card"
 import { faAnchorLock, faBriefcase, faScaleBalanced, faShield } from "@fortawesome/free-solid-svg-icons"

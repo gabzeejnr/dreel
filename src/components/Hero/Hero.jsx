@@ -6,20 +6,21 @@ import { ArrowRight, Badge, BookOpen, Download, Users } from "lucide-react";
 import BottomInfo from "./BottomInfo";
 import RightImage from "./RightImage";
 import HoverAboveCard from "../HoverAboveCard";
-import dreelLogo from "../../assets/images/dreel-academy-logo.png"
+import dreelLogo from "../../assets/images/dreel-academy-logo.png";
+import girl from "../../assets/images/hero-image.png";
 import { Link } from "react-router-dom";
 
 export default function Hero() {
     return (
-        <section id="home-hero" className="relative flex flex-col lg:flex-row min-h-screen text-white pt-10 pb-10 lg:pt-30 px-5 lg:px-20 gap-10 items-center">
-            <Link to="/home" className="lg:hidden z-1 flex self-start -mb-10 -mt-10 w-30">
-                <img src={dreelLogo} alt="DReel Academy Logo" className="w-full h-full" />
-            </Link>
+        <section id="home-hero" className="relative flex flex-col lg:flex-row text-white pt-10 pb-10 lg:pt-30 px-5 lg:px-20 gap-10 items-center">
             <div className="flex-1 flex flex-col justify-center gap-1 z-1 relative">
+                <Link to="/home" className="relative lg:hidden z-1 flex self-start w-30">
+                    <img src={dreelLogo} alt="DReel Academy Logo" className="w-full h-full" />
+                </Link>
                 <TopPill />
                 <LargeText />
                 <SmallText />
-                <div className="flex flex-col sm:flex-row md:flex-col gap-3 lg:gap-8 mt-6 lg:pr-10">
+                <div className="flex flex-col sm:flex-row md:flex-col gap-3 lg:gap-4 mt-6 lg:pr-10">
                     <Button type="button"
                         className="btn btn-bg-primary cursor-pointer flex flex-1 justify-center items-center gap-2 md:gap-3 w-fit">
                         <span className="font-semibold">Start Learning</span>
@@ -31,7 +32,7 @@ export default function Hero() {
                         Apply for Scholarship
                     </Button>
                 </div>
-                <div className="mt-4 flex justify-around lg:justify-normal lg:gap-4 w-full">
+                <div className=" flex justify-around lg:justify-normal lg:gap-4 mt-5 w-full">
                     <BottomInfo value="12" name="Programs">
                         <Users size={20} />
                     </BottomInfo>
@@ -49,7 +50,7 @@ export default function Hero() {
                         <BookOpen size={20} />
                     </HoverAboveCard>
                 </div>
-                <div className="sm:w-3/4 md lg:w-full"><RightImage /></div>
+                <div className="sm:w-3/4 lg:w-full"><RightImage src={girl} /></div>
             </div>
         </section>
     )

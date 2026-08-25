@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
-:root{
+:root {
+    --font-sans: "Inter", sans-serif;
+    --font-heading: "Space Grotesk", sans-serif;
     --primary-color: #1D4ED8;
 }
 
-body{
+body {
     font-family: 'Helvetica Neue', sans-serif;
 }

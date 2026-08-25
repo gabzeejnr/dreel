@@ -6,15 +6,15 @@ export default function Card() {
                     <h4 className="h4 font-bold mb-4">Scholarship Stats</h4>
                     <div className="flex justify-around text-center">
                         <div>
-                            <h2 className="font-bold primary-color text-4xl">₦2.5M+</h2>
+                            <h2 className="font-bold primary-color text-2xl md:text-4xl">₦2.5M+</h2>
                             <small>Tuition Funded</small>
                         </div>
                         <div>
-                            <h2 className="font-bold primary-color text-4xl">850+</h2>
+                            <h2 className="font-bold primary-color text-2xl md:text-4xl">850+</h2>
                             <small>Scholars</small>
                         </div>
                         <div>
-                            <h2 className="font-bold primary-color text-4xl">92%</h2>
+                            <h2 className="font-bold primary-color text-2xl md:text-4xl">92%</h2>
                             <small>Placement Rate</small>
                         </div>
                     </div>

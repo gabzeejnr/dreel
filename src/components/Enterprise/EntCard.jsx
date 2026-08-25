@@ -14,7 +14,7 @@ export default function EntCard({ icon, title, subtitle, text, left, right }) {
             <div className="w-full mb-5 text-[15px] text-gray-800 leading-[1.6]">
                 <p className="text-wrap text-center">{text}</p>
             </div>
-            <div className="flex gap-3 justify-center py-2 items-center text-[14px]">
+            <div className="flex gap-3 justify-between py-2 items-center text-[14px]">
                 <span className="inline-flex gap-1">
                     <span className="font-bold">{String(left.split(" ")[0])}</span>
                     <span>{String(left.split(" ").slice(1).join(" "))}</span>

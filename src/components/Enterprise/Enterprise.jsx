@@ -40,14 +40,14 @@ export default function Enterprise() {
     ]
 
     return (
-        <section id="home-enterprise" className="min-h-screen">
+        <section id="home-enterprise" className="">
             <div className="background-overlay flex flex-col text-white gap-10 items-center pt-10 pb-10">
                 <div className="mb-10 mt-4 text-center flex flex-col gap-5 max-w-150">
                     <h1 className="primary-color font-bold tracking-[3px]">ENTERPRISE SERVICES</h1>
                     <h2 className="font-bold text-4xl">Cloud & DevOps <span className="primary-color">Expertise</span></h2>
                     <p className="text-[15.6px] text-wrap w-3/4 font-medium self-center tracking-[1px]">Beyond training—Dreel Limited provides enterprise-grade cloud infrastructure, Kubernetes deployment, and DevOps transformation services.</p>
                 </div>
-                <div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:justify-center lg:grid-cols-4 px-5 md:px-10 gap-5 lg:px-13">
+                <div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:justify-center lg:grid-cols-4 px-3 md:px-10 gap-5 lg:px-13">
                     {cardItems.map(card => (
                         <EntCard key={card.title} icon={card.icon} title={card.title} subtitle={card.subtitle}
                             text={card.text} left={card.left} right={card.right} />

@@ -1,3 +1,4 @@
+import Community from "../components/Community/Community";
 import Enterprise from "../components/Enterprise/Enterprise";
 import Hero from "../components/Hero/Hero";
 import Partners from "../components/Partners/Partners";
@@ -12,6 +13,7 @@ export default function Home() {
             <Programs />
             <Enterprise />
             <Scholarship />
+            <Community />
         </>
     )
 }

@@ -97,12 +97,12 @@ export default function Footer() {
     return (
         <footer id="footer">
             <div className="bg-[#00000099] h-full flex flex-col gap-10 text-white lg:px-10 lg:pt-10">
-                <div className="flex flex-col">
-                    <div className="flex flex-col flex-1">
+                <div className="flex flex-col lg:flex-row gap-6 lg:gap-0">
+                    <div className="flex flex-col flex-1 pl-5">
                         <Link to="/home" className="h-fit flex w-40">
                             <img src={dReelLogo} alt="Dreel Academy" className="w-full" />
                         </Link>
-                        <article className="text-wrap ">Africa's premier platform for cloud-native engineering talent. Building the next generation of DevOps and Infrastructure engineers across Africa.</article>
+                        <article className="text-wrap">Africa's premier platform for cloud-native engineering talent. Building the next generation of DevOps and Infrastructure engineers across Africa.</article>
                         <info className="mt-4 flex flex-col gap-3">
                             {contacts.filter(c => !c.detail.includes("Lagos")).map(c => (
                                 <span className="inline-flex gap-2">
@@ -123,7 +123,7 @@ export default function Footer() {
                             </span>
                         </info>
                     </div>
-                    <div className="flex-2 grid grid-cols-2 sm:grid-cols-3 gap-4 lg:grid-cols-4 lg:place-items-center">
+                    <div className="pl-5 flex-2 grid grid-cols-2 sm:grid-cols-3 gap-10 lg:grid-cols-4 lg:place-items-center">
                         {arrayOfArrays.map(aoa => (
                             <FooterLinks title={aoa[0]} array={aoa[1]} />
                         ))}
