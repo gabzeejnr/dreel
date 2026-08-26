@@ -46,5 +46,10 @@
 }
 
 .mobile-pad{
-    padding: 0 20px 0 20px;
+    padding: 0 8px 0 8px;
+}
+
+.gray-text{
+    color: #364153;
+    font-size: 14px;
 }

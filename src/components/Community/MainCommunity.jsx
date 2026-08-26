@@ -1,5 +1,6 @@
 import { Code2, Computer, Square, Users } from "lucide-react"
 import ComCard from "./ComCard"
+import Button from "../Button"
 
 export default function MainComunity() {
 
@@ -28,11 +29,12 @@ export default function MainComunity() {
                     <h2 className="font-bold text-4xl">Cloud & DevOps <span className="primary-color">Expertise</span></h2>
                     <p className="text-[15.6px] text-wrap w-3/4 font-medium self-center tracking-[1px]">Join 3000+ engineers building Africa's cloud-native future through collaboration, knowledge sharing, and innovation.</p>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:justify-center px-3 md:px-10 gap-5 lg:px-13">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:justify-center px-5 md:px-10 gap-5 lg:px-13">
                     {data.map(d => (
-                        <ComCard key={d.title} text={d.text}>{d.icon}</ComCard>
+                        <ComCard key={d.title} text={d.text} title={d.title}>{d.icon}</ComCard>
                     ))}
                 </div>
+                <Button type="button" value="Join Our Community" className="btn btn-bg-primary mt-10" />
             </div>
         </section>
     )
