@@ -5,9 +5,12 @@ import RightImage from "../Hero/RightImage";
 import community from "../../assets/images/Dreel-community-image.png";
 import HoverAboveCard from "../HoverAboveCard";
 import { Globe, MessageCircle } from "lucide-react";
+import FormModal from "./FormModal";
+import { useState } from "react";
 
 export default function Community() {
 
+    const [showModal, setShowModal] = useState(false)
     const data = [
         {
             icon: faUsers,
@@ -40,8 +43,9 @@ export default function Community() {
             text: "Work on real-world projects with your peers."
         }
     ]
+
     return (
-        <section className="px-5 pt-0 md:p-20 py-24 flex flex-col lg:flex-row gap-8 bg-gray-50"> {/* px-5 md:p-20 py-24 flex flex-col lg:flex-row gap-8 */}
+        <section id="community" className="px-5 pt-0 md:p-20 py-24 flex flex-col lg:flex-row gap-8 bg-gray-50"> {/* px-5 md:p-20 py-24 flex flex-col lg:flex-row gap-8 */}
             <div className="flex flex-col flex-1">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 px-5">
                     {data.map(d => (
@@ -49,7 +53,8 @@ export default function Community() {
                     ))}
                 </div>
                 <div className="mt-10">
-                    <Button type="button" value="Join Community" className="btn btn-bg-primary" /></div>
+                    <Button type="button" value="Join Community" className="btn btn-bg-primary" onClick={() => setShowModal(true)} />
+                </div>
             </div>
             <div className="flex-1 relative rounded-4xl grid place-items-center lg:px-20"
                 data-aos="fade-down">
@@ -65,6 +70,7 @@ export default function Community() {
                     </HoverAboveCard>
                 </div>
             </div>
+            <FormModal showModal={showModal} setShowModal={setShowModal} />
         </section>
     )
 }

@@ -6,17 +6,12 @@ import { ArrowRight, Badge, BookOpen, Download, Users } from "lucide-react";
 import BottomInfo from "./BottomInfo";
 import RightImage from "./RightImage";
 import HoverAboveCard from "../HoverAboveCard";
-import dreelLogo from "../../assets/images/dreel-academy-logo.png";
 import girl from "../../assets/images/hero-image.png";
-import { Link } from "react-router-dom";
 
 export default function Hero() {
     return (
-        <section id="home-hero" className="relative flex flex-col lg:flex-row text-white pt-10 pb-10 lg:pt-30 px-5 lg:px-20 gap-10 items-center">
+        <section id="home-hero" className="relative flex flex-col lg:flex-row text-white pt-25 pb-10 lg:pt-30 px-5 lg:px-20 gap-10 items-center">
             <div className="flex-1 flex flex-col justify-center gap-1 z-1 relative">
-                <Link to="/home" className="relative lg:hidden z-1 flex self-start w-30">
-                    <img src={dreelLogo} alt="DReel Academy Logo" className="w-full h-full" />
-                </Link>
                 <TopPill />
                 <LargeText />
                 <SmallText />
@@ -47,7 +42,7 @@ export default function Hero() {
             <div className="flex-1 flex items-center justify-center z-1 relative mb-10 md:px-10">
                 <div className="flex absolute bottom-3 -left-3 sm:left-15 md:left-25 lg:left-5 z-4">
                     <HoverAboveCard title="200+ Courses" info="Available Now">
-                        <BookOpen size={20} />
+                        <BookOpen size={20} color="#1D4ED8" />
                     </HoverAboveCard>
                 </div>
                 <div className="sm:w-3/4 lg:w-full"><RightImage src={girl} /></div>

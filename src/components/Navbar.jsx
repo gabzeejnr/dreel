@@ -13,10 +13,10 @@ export default function Navbar() {
 
     const [isOpen, setIsOpen] = useState(false);
     const navItems = [
-        { text: "Programs", link: "/programs" },
-        { text: "Enterprise", link: "/enterprise" },
-        { text: "Community", link: "/community" },
-        { text: "Scholarship", link: "/scholarship" },
+        { text: "Programs", link: "#programs" },
+        { text: "Enterprise", link: "#enterprise" },
+        { text: "Community", link: "#community" },
+        { text: "Scholarship", link: "#scholarship" },
         { text: "DCNSP", link: "/dcnsp" },
         { text: "SUSE Partnership", link: "/suse" },
         { text: "LMS", link: "/lms" }
@@ -46,8 +46,7 @@ export default function Navbar() {
                             <img src={dReelLogo} alt="Dreel Academy" className="w-full" />
                         </Link>
                         {navItems.map(nav => (
-                            <NavLink to={nav.link} key={nav.link}
-                                className={({ isActive }) => isActive ? "bg-blue-700" : ""}>{nav.text}</NavLink>
+                            <a href={nav.link} key={nav.link}>{nav.text}</a>
                         ))}
                     </div>
                     <div className="right-nav h-full min-w-60 flex px-5 gap-6 rounded-[2.5rem] items-center justify-around bg-[#202020]">
@@ -59,26 +58,32 @@ export default function Navbar() {
             </nav>
 
             {/* MOBILE NAV */}
-            <div className="fixed flex flex-col lg:hidden items-end z-40 w-full pt-2">
-                <Button type="button" className="text-white bg-gray-900 cursor-pointer w-10 h-9 text-2xl"
-                    onClick={toggleNavbar}>
-                    <FontAwesomeIcon icon={faBars} />
-                </Button>
-            </div>
-            {isOpen && (
-                <nav className="lg:hidden flex flex-col fixed right-0 text-white z-50 w-full md:w-1/2 text-center bg-gray-800 py-2 transition-all duration-1000">
-                    <Button type="button" className="self-end mt-5 mr-4"
+            <div className="fixed flex flex-col lg:hidden z-40 w-full top-4 px-4">
+                <div className="flex justify-between">
+                    <Link className="w-18 h-18 flex items-center justify-center bg-black rounded-[50%] p-0">
+                        <img src={dReelLogo} />
+                    </Link>
+                    <Button type="button" className="text-white bg-black cursor-pointer flex items-center justify-center h-15 w-15 rounded-4xl text-3xl
+                transition-all duration-700"
                         onClick={toggleNavbar}>
-                        <FontAwesomeIcon icon={faX} className="transition-all duration-700 hover:rotate-360 text-2xl" />
+                        <FontAwesomeIcon icon={!isOpen ? faBars : faX} />
                     </Button>
-                    {navItems.map(nav => (
-                        <NavLink to={nav.link} className="overflow-hidden py-2">{nav.text}</NavLink>
-                    ))}
-                    {smallNav.map(nav => (
-                        <NavLink to={nav.link} className={({ isActive }) => (`py-2 ${isActive ? "bg-blue" : ""}`)}>{nav.text}</NavLink>
-                    ))}
-                </nav>
-            )}
+                </div>
+
+                {isOpen && (
+                    <nav className="lg:hidden flex flex-col fixed top-23 rounded-4xl right-0 font-medium text-black z-50 w-full sm:w-1/2 text-center bg-white py-2 transition-all duration-400">
+                        {navItems.map(nav => (
+                            <a href={nav.link} className="overflow-hidden inline-flex justify-between py-3 px-8 transition-all duration-300"
+                                onClick={() => setIsOpen(false)}>{nav.text}
+                                <Button type="button" value="&gt;" className="text-black" />
+                            </a>
+                        ))}
+                        {smallNav.map(nav => (
+                            <Button type="button" className={`btn ${nav.text.includes("career") ? "btn-outline-bg" : "btn-bg-primary"}`} value={nav.text} />
+                        ))}
+                    </nav>
+                )}
+            </div>
         </>
     )
 }

@@ -12,10 +12,10 @@
     background: rgba(0, 0, 0, .1);
 } */
 
-#home-enterprise {
+#enterprise {
     background: url('../assets//images/dreel-academy-banner.png') center / cover no-repeat;
 }
-#home-enterprise::after {
+#enterprise::after {
     content: "";
     position: absolute;
     inset: 0;

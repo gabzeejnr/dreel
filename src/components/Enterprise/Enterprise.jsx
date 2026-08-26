@@ -40,7 +40,7 @@ export default function Enterprise() {
     ]
 
     return (
-        <section id="home-enterprise" className="">
+        <section id="enterprise" className="">
             <div className="background-overlay flex flex-col text-white gap-10 items-center pt-10 pb-10">
                 <div className="mb-10 mt-4 text-center flex flex-col gap-5 max-w-150">
                     <h1 className="primary-color font-bold tracking-[3px]">ENTERPRISE SERVICES</h1>
