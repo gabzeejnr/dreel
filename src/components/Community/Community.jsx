@@ -3,6 +3,8 @@ import Info from "../Info"
 import Button from "../Button"
 import RightImage from "../Hero/RightImage";
 import community from "../../assets/images/Dreel-community-image.png";
+import HoverAboveCard from "../HoverAboveCard";
+import { Globe, MessageCircle } from "lucide-react";
 
 export default function Community() {
 
@@ -39,7 +41,7 @@ export default function Community() {
         }
     ]
     return (
-        <section className="px-5 md:p-20 py-24 flex flex-col lg:flex-row gap-8 bg-gray-50"> {/* px-5 md:p-20 py-24 flex flex-col lg:flex-row gap-8 */}
+        <section className="px-5 pt-0 md:p-20 py-24 flex flex-col lg:flex-row gap-8 bg-gray-50"> {/* px-5 md:p-20 py-24 flex flex-col lg:flex-row gap-8 */}
             <div className="flex flex-col flex-1">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 px-5">
                     {data.map(d => (
@@ -49,8 +51,19 @@ export default function Community() {
                 <div className="mt-10">
                     <Button type="button" value="Join Community" className="btn btn-bg-primary" /></div>
             </div>
-            <div className="flex-1 rounded-4xl grid place-items-center lg:px-20">
+            <div className="flex-1 relative rounded-4xl grid place-items-center lg:px-20"
+                data-aos="fade-down">
+                <div className="absolute z-3 -top-5 right-0">
+                    <HoverAboveCard title="24/7 Support" info="Always here">
+                        <MessageCircle color="#1D4ED8" />
+                    </HoverAboveCard>
+                </div>
                 <RightImage src={community} />
+                <div className="absolute z-3 bottom-0 left-10">
+                    <HoverAboveCard title="150+ Countries" info="Worldwide reach">
+                        <Globe color="#1D4ED8" />
+                    </HoverAboveCard>
+                </div>
             </div>
         </section>
     )

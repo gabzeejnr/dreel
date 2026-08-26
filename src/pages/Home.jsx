@@ -1,4 +1,5 @@
 import Community from "../components/Community/Community";
+import MainComunity from "../components/Community/MainCommunity";
 import Enterprise from "../components/Enterprise/Enterprise";
 import Hero from "../components/Hero/Hero";
 import Partners from "../components/Partners/Partners";
@@ -14,6 +15,7 @@ export default function Home() {
             <Enterprise />
             <Scholarship />
             <Community />
+            <MainComunity />
         </>
     )
 }

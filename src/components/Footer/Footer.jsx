@@ -103,9 +103,9 @@ export default function Footer() {
                             <img src={dReelLogo} alt="Dreel Academy" className="w-full" />
                         </Link>
                         <article className="text-wrap">Africa's premier platform for cloud-native engineering talent. Building the next generation of DevOps and Infrastructure engineers across Africa.</article>
-                        <info className="mt-4 flex flex-col gap-3">
+                        <div className="mt-4 flex flex-col gap-3">
                             {contacts.filter(c => !c.detail.includes("Lagos")).map(c => (
-                                <span className="inline-flex gap-2">
+                                <span className="inline-flex gap-2" key={c.detail}>
                                     <span>
                                         <FontAwesomeIcon icon={c.icon} />
                                     </span>
@@ -121,7 +121,7 @@ export default function Footer() {
                                </span>
                                {contacts[2].detail}
                             </span>
-                        </info>
+                        </div>
                     </div>
                     <div className="pl-5 flex-2 grid grid-cols-2 sm:grid-cols-3 gap-10 lg:grid-cols-4 lg:place-items-center">
                         {arrayOfArrays.map(aoa => (

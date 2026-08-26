@@ -82,7 +82,7 @@ export default function Programs() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-5 transition-all duration-1000">
                 {cardInfo.slice(0, toggle).map((card, index) => (
                     <div data-aos="zoom-in" data-aos-duration={index + 1 * 50}
-                    data-aos-delay={(index + 1) * 100}>
+                    data-aos-delay={(index + 1) * 100} key={index * 10}>
                         <ProgCards image={card.img} title={card.title} subtitle={card.subtitle} duration={card.duration} link={card.link} />
                     </div>
                 ))}

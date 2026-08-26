@@ -20,7 +20,7 @@ export default function Marquee() {
             <div className={styles["partner-logo"]}>
                 <img src={TechnoFocus} alt="TechnoFocus" />
             </div>
-            <div class="partner-logo">
+            <div className="partner-logo">
                 <img src="YOUR_LEVELUP_IMAGE_HERE" alt="LevelUp" />
             </div>
             <div className={styles["partner-logo"]}>
@@ -35,7 +35,7 @@ export default function Marquee() {
             <div className={styles["partner-logo"]}>
                 <img src={TechnoFocus} alt="TechnoFocus" />
             </div>
-            <div class="partner-logo">
+            <div className="partner-logo">
                 <img src="YOUR_LEVELUP_IMAGE_HERE" alt="LevelUp" />
             </div>
         </div>
