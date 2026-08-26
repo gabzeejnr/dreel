@@ -76,7 +76,7 @@ export default function Programs() {
     ]
 
     return (
-        <section id="programs" className="text-center mt-10 pb-10 border">
+        <section id="programs" className="text-center mt-10 pb-10">
             <h3 className="font-bold tracking-[1px] text-3xl mb-5">Our Programs</h3>
             <p className="mb-8 text-gray-500 px-5">Practical, instructor-led programs that prepare you for real-world cloud-native engineering roles.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-5 transition-all duration-1000">

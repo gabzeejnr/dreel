@@ -102,7 +102,7 @@ export default function Footer() {
                         <Link to="/home" className="h-fit flex w-40">
                             <img src={dReelLogo} alt="Dreel Academy" className="w-full" />
                         </Link>
-                        <article className="text-wrap w-100 sm:w-120 md:w-full">Africa's premier platform for cloud-native engineering talent. Building the next generation of DevOps and Infrastructure engineers across Africa.</article>
+                        <article className="text-wrap w-full sm:w-120 md:w-full">Africa's premier platform for cloud-native engineering talent. Building the next generation of DevOps and Infrastructure engineers across Africa.</article>
                         <div className="mt-4 flex flex-col gap-3">
                             {contacts.filter(c => !c.detail.includes("Lagos")).map(c => (
                                 <span className="inline-flex gap-2" key={c.detail}>

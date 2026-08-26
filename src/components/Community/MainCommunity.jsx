@@ -36,7 +36,7 @@ export default function MainComunity() {
      }, [showModal]); */
 
     return (
-        <section className="bg-gray-50 border">
+        <section className="bg-gray-50">
             <div className="flex flex-col text-black gap-10 items-center pt-10 pb-10">
                 <div className="mb-10 mt-4 text-center flex flex-col gap-5 max-w-150 px-10">
                     <h1 className="primary-color font-bold tracking-[3px]">COMMUNITY</h1>
