@@ -45,7 +45,7 @@ export default function Community() {
     ]
 
     return (
-        <section id="community" className="px-5 pt-0 md:p-20 py-24 flex flex-col lg:flex-row gap-8 bg-gray-50"> {/* px-5 md:p-20 py-24 flex flex-col lg:flex-row gap-8 */}
+        <section id="community" className="border px-5 pt-0 md:p-20 py-24 flex flex-col lg:flex-row gap-8 bg-gray-50"> {/* px-5 md:p-20 py-24 flex flex-col lg:flex-row gap-8 */}
             <div className="flex flex-col flex-1">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 px-5">
                     {data.map(d => (

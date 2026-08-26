@@ -12,7 +12,7 @@ export default function App() {
     })
 
     return (
-        <div>
+        <div className="w-full border">
             <RoutePage />
         </div>
     )

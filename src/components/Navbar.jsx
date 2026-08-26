@@ -58,20 +58,27 @@ export default function Navbar() {
             </nav>
 
             {/* MOBILE NAV */}
-            <div className="fixed flex flex-col lg:hidden z-40 w-full top-4 px-4">
+            {/* <div className="fixed top-4 border border-white w-full left-0 z-40 flex flex-col px-4 lg:hidden">
                 <div className="flex justify-between">
-                    <Link className="w-18 h-18 flex items-center justify-center bg-black rounded-[50%] p-0">
-                        <img src={dReelLogo} />
+                    <Link to="/home" className="w-15 h-15 flex items-center justify-center bg-black rounded-[50%] p-0">
+                        <img src={dReelLogo} alt="Dreel Academy" />
                     </Link>
-                    <Button type="button" className="text-white bg-black cursor-pointer flex items-center justify-center h-15 w-15 rounded-4xl text-3xl
-                transition-all duration-700"
+                    <Button type="button" className="text-white bg-black cursor-pointer flex items-center justify-center h-15 w-15 rounded-4xl text-3xl transition-all duration-700"
                         onClick={toggleNavbar}>
                         <FontAwesomeIcon icon={!isOpen ? faBars : faX} />
                     </Button>
                 </div>
 
                 {isOpen && (
-                    <nav className="lg:hidden flex flex-col fixed top-23 rounded-4xl right-0 font-medium text-black z-50 w-full sm:w-1/2 text-center bg-white py-2 transition-all duration-400">
+                    <nav></nav>
+                )}
+            </div> */}
+        </>
+    )
+}
+
+/* 
+<nav className="lg:hidden flex flex-col mt-3 rounded-4xl font-medium text-black z-50 sm:w-1/2 text-center bg-white py-2">
                         {navItems.map(nav => (
                             <a href={nav.link} className="overflow-hidden inline-flex justify-between py-3 px-8 transition-all duration-300"
                                 onClick={() => setIsOpen(false)}>{nav.text}
@@ -82,8 +89,4 @@ export default function Navbar() {
                             <Button type="button" className={`btn ${nav.text.includes("career") ? "btn-outline-bg" : "btn-bg-primary"}`} value={nav.text} />
                         ))}
                     </nav>
-                )}
-            </div>
-        </>
-    )
-}
+ */

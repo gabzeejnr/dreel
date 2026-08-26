@@ -10,7 +10,7 @@ export default function Hiring() {
     ];
 
     return (
-        <section className="bg-gray-50 pt-20">
+        <section className="bg-gray-50 pt-20 border">
             <div className="mb-10 text-center flex flex-col gap-5 items-centr">
                 <h1 className="primary-color font-bold tracking-[3px]">HIRING PIPELINE</h1>
                 <h2 className="font-bold text-4xl">Hire <span className="primary-color">Dreel Engineers</span></h2>

@@ -29,7 +29,7 @@ export default function Scholarship() {
     ]
 
     return (
-        <section id="scholarship" className="px-5 md:p-20 py-24 flex flex-col lg:flex-row gap-8 bg-gray-50">
+        <section id="scholarship" className="border px-5 md:p-20 py-24 flex flex-col lg:flex-row gap-8 bg-gray-50">
             <div className="flex flex-col flex-1">
                 <div>
                     <h1 className="primary-color tracking-[1px] mb-2 font-bold">SCHOLARSHIP PROGRAM</h1>
