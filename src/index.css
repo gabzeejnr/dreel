@@ -5,6 +5,16 @@
     --font-heading: "Space Grotesk", sans-serif;
     --primary-color: #1D4ED8;
     --primary-hover-color: #013AD6;
+    --bg-primary-fade: #1D4ED81F;
+}
+
+* {
+    transition: all 500ms;
+}
+
+html {
+    scroll-behavior: smooth;
+    transition: all 300ms;
 }
 
 body {

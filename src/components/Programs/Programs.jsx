@@ -8,6 +8,10 @@ import Platform from "../../assets/images/Platform-Engineering-Icon.png";
 
 export default function Programs() {
 
+    // ============================================================================================
+    // STATES & VARIABLES =======================
+    // ============================================================================================
+
     const [toggle, setToggle] = useState(4)
     const cardInfo = [
         {

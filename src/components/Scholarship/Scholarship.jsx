@@ -1,10 +1,17 @@
-import Info from "../Info"
-import Button from "../Button"
-import Card from "./Card"
-import { faAnchorLock, faBriefcase, faScaleBalanced, faShield } from "@fortawesome/free-solid-svg-icons"
+import { useState } from "react";
+import Info from "../Info";
+import Button from "../Button";
+import Card from "./Card";
+import { faAnchorLock, faBriefcase, faScaleBalanced, faShield } from "@fortawesome/free-solid-svg-icons";
+import FormModal from "./FormModal";
 
 export default function Scholarship() {
 
+    // ============================================================================================
+    // STATES & VARIABLES =======================
+    // ============================================================================================
+
+    const [showScholarship, setShowScholarship] = useState(false);
     const scholarshipInfo = [
         {
             icon: faAnchorLock,
@@ -42,11 +49,13 @@ export default function Scholarship() {
                     ))}
                 </div>
                 <div className="mt-10">
-                    <Button type="button" value="Apply for Scholarship" className="btn btn-bg-primary" /></div>
+                    <Button type="button" value="Apply for Scholarship" className="btn btn-bg-primary"
+                        onClick={() => setShowScholarship(true)} /></div>
             </div>
             <div className="flex-1 grid place-items-center">
                 <Card />
             </div>
+            <FormModal showModal={showScholarship} setShowModal={setShowScholarship} />
         </section>
     )
 }

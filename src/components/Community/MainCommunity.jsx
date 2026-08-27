@@ -6,6 +6,10 @@ import FormModal from "./FormModal"
 
 export default function MainComunity() {
 
+    // ============================================================================================
+    // STATES & VARIABLES =======================
+    // ============================================================================================
+
     const [showModal, setShowModal] = useState(false);
 
     const data = [
@@ -25,15 +29,6 @@ export default function MainComunity() {
             text: "Build infrastructure projects, compete for prizes, and showcase your skills in real-world scenarios."
         }
     ]
-
-
-    /*  useEffect(() => {
-         document.body.style.overflow = showModal ? "hidden" : "";
- 
-         return () => {
-             document.body.style.overflow = "";
-         };
-     }, [showModal]); */
 
     return (
         <section className="bg-gray-50">

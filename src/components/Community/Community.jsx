@@ -10,7 +10,11 @@ import { useState } from "react";
 
 export default function Community() {
 
-    const [showModal, setShowModal] = useState(false)
+    // ============================================================================================
+    // STATES & VARIABLES =======================
+    // ============================================================================================
+
+    const [showModal, setShowModal] = useState(false);
     const data = [
         {
             icon: faUsers,
@@ -63,7 +67,7 @@ export default function Community() {
                         <MessageCircle color="#1D4ED8" />
                     </HoverAboveCard>
                 </div>
-                <RightImage src={community} />
+                <RightImage src={community} alt={"DReel Community"} />
                 <div className="absolute z-3 bottom-0 left-10">
                     <HoverAboveCard title="150+ Countries" info="Worldwide reach">
                         <Globe color="#1D4ED8" />

@@ -4,6 +4,10 @@ import { faComputer, faServer, faPeace, faBriefcase, faEye } from "@fortawesome/
 
 export default function Enterprise() {
 
+    // ============================================================================================
+    // STATES & VARIABLES =======================
+    // ============================================================================================
+
     const cardItems = [
         {
             icon: faServer,
@@ -49,8 +53,10 @@ export default function Enterprise() {
                 </div>
                 <div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:justify-center lg:grid-cols-4 px-3 md:px-10 gap-5 lg:px-13">
                     {cardItems.map(card => (
-                        <EntCard key={card.title} icon={card.icon} title={card.title} subtitle={card.subtitle}
+                        <div data-aos="zoom-in">
+                            <EntCard key={card.title} icon={card.icon} title={card.title} subtitle={card.subtitle}
                             text={card.text} left={card.left} right={card.right} />
+                        </div>
                     ))}
                 </div>
                 <Button type="button" className="btn btn-bg-primary cursor-pointer" value="Request Enterprise Demo" />

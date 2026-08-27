@@ -2,6 +2,14 @@
     color: var(--primary-color);
 }
 
+.bg-primary{
+    background: var(--bg-primary-fade);
+    color: var(--primary-color);
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+}
+
 .card-icon-bg {
     background: #1D4FD82F;
     position: relative;
@@ -11,6 +19,15 @@
     border-radius: 50%;
     display: grid;
     place-items: center;
+}
+
+.card {
+    transition: all 500ms;
+    box-shadow: 0 0 4px 1px #9993;
+}
+
+.card:hover {
+    transform: translateY(-.5rem);
 }
 
 .btn {

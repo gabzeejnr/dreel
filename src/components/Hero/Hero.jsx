@@ -45,7 +45,7 @@ export default function Hero() {
                         <BookOpen size={20} color="#1D4ED8" />
                     </HoverAboveCard>
                 </div>
-                <div className="sm:w-3/4 lg:w-full"><RightImage src={girl} /></div>
+                <div className="sm:w-3/4 lg:w-full"><RightImage src={girl} alt={"Hero Secondary Image"} /></div>
             </div>
         </section>
     )

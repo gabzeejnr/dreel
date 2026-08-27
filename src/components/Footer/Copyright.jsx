@@ -3,6 +3,10 @@ import { socialMedia } from "../../data/academyData"
 
 export default function Copyright() {
 
+    // ============================================================================================
+    // STATES & VARIABLES =======================
+    // ============================================================================================
+
     const year = new Date().getFullYear()
 
     return (

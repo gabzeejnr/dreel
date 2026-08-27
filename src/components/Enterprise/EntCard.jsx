@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function EntCard({ icon, title, subtitle, text, left, right }) {
 
     return (
-        <div className="flex flex-col bg-white h-full text-black p-5 rounded-4xl">
+        <div className="card flex flex-col bg-white h-full text-black p-5 rounded-4xl">
             <div className="flex flex-col items-center">
                 <div className="card-icon-bg mb-4">
                     <FontAwesomeIcon icon={icon} className="text-[#1D4ED8]" />
