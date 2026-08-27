@@ -13,10 +13,10 @@ export default function Navbar() {
 
     const [isOpen, setIsOpen] = useState(false);
     const navItems = [
-        { text: "Programs", link: "#programs" },
-        { text: "Enterprise", link: "#enterprise" },
-        { text: "Community", link: "#community" },
-        { text: "Scholarship", link: "#scholarship" },
+        { text: "Programs", link: "/#programs" },
+        { text: "Enterprise", link: "/#enterprise" },
+        { text: "Community", link: "/#community" },
+        { text: "Scholarship", link: "/#scholarship" },
         { text: "DCNSP", link: "/dcnsp" },
         { text: "SUSE Partnership", link: "/suse" },
         { text: "LMS", link: "/lms" }
@@ -45,13 +45,19 @@ export default function Navbar() {
                         <Link to="/home" className="h-full flex">
                             <img src={dReelLogo} alt="Dreel Academy" className="w-full" />
                         </Link>
-                        {navItems.map(nav => (
-                            <a href={nav.link} key={nav.link}>{nav.text}</a>
-                        ))}
+                        {navItems.map(nav => {
+                            const isRoute = nav.link.startsWith("/") && !nav.link.includes("#")
+
+                            return isRoute ? (
+                                <NavLink key={nav.text} to={nav.link}>{nav.text}</NavLink>
+                            ) : (
+                                <a key={nav.text} href={nav.link}>{nav.text}</a>
+                            )
+                        })}
                     </div>
                     <div className="right-nav h-full min-w-60 flex px-5 gap-6 rounded-[2.5rem] items-center justify-around bg-[#202020]">
                         {smallNav.map(nav => (
-                            <a href={nav.link} key={nav.link}>{nav.text}</a>
+                            <a href={nav.link} key={nav.text}>{nav.text}</a>
                         ))}
                     </div>
                 </div>
@@ -71,15 +77,23 @@ export default function Navbar() {
 
                 {isOpen && (
                     <nav className="lg:hidden flex flex-col mt-3 rounded-4xl font-medium text-black z-50 sm:w-1/2 text-center bg-white py-2">
-                        {navItems.map(nav => (
-                            <a href={nav.link} className="overflow-hidden inline-flex justify-between py-3 px-8 transition-all duration-300"
-                                onClick={() => setIsOpen(false)}>{nav.text}
-                                <Button type="button" value="&gt;" className="text-black" />
-                            </a>
-                        ))}
-                        {smallNav.map(nav => (
-                            <Button type="button" className={`btn ${nav.text.includes("career") ? "btn-outline-bg" : "btn-bg-primary"}`} value={nav.text} />
-                        ))}
+                        {navItems.map(nav => {
+                            const isRoute = nav.link.startsWith("/") && !nav.link.includes("#")
+                            return isRoute
+                                ? <NavLink to={nav.link} key={nav.link} className="overflow-hidden inline-flex justify-between py-3 px-8"
+                                    onClick={() => setIsOpen(false)}>{nav.text}
+                                    <Button type="button" value="&gt;" className="text-black" />
+                                </NavLink>
+                                : <a href={nav.link} className="overflow-hidden inline-flex justify-between py-3 px-8"
+                                    onClick={() => setIsOpen(false)}>{nav.text}
+                                    <Button type="button" value="&gt;" className="text-black" />
+                                </a>
+                        })}
+                        <div className="flex gap-4 justify-center">
+                            {smallNav.map(nav => (
+                                <Button type="button" className={`btn ${nav.text.includes("career") ? "btn-outline-bg" : "btn-bg-primary"}`} value={nav.text} />
+                            ))}
+                        </div>
                     </nav>
                 )}
             </div>

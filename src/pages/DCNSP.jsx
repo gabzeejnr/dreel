@@ -1,8 +1,13 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import TopPill from "../components/Hero/TopPill";
 import Button from "../components/Button";
 import DCNSPCard from "../components/DCNSPCard";
+import FormModal from "../components/Scholarship/FormModal";
 
 export default function DCNSP() {
+
+    const [showScholarship, setShowScholarship] = useState(false);
     const pillArray = ['DCNSP', 'Scholarship Program'];
     const PLT = [
         "SUSE Linux Enterprise Administration",
@@ -39,10 +44,13 @@ export default function DCNSP() {
                     One of our flagship initiatives designed to remove financial barriers and create opportunities for thousands of aspiring technology professionals across Africa.
                 </p>
             </div>
-            <div className="flex gap-3 mt-4 justify-center">
-                <Button type="button" value="Apply for a Scholarship" className="btn btn-bg-primary" />
+            <div className="flex gap-3 mt-4 justify-center text-sm px-10 items-center">
+                <Button type="button" value="Apply for a Scholarship" className="btn btn-bg-primary "
+                    onClick={() => setShowScholarship(true)} />
                 <Button type="button" value="Become a Sponsor" className="btn btn-outline-primary" />
-                <Button type="button" value="Wishlist" className="btn btn-outline-primary" />
+                <Link to="https://docs.google.com/forms/d/e/1FAIpQLSekp3BnTuhQattaUHb317udDtJkzaCs2xIY-ReeWBBEUJR5wg/viewform">
+                    <Button type="button" value="Wishlist" className="btn btn-outline-primary cursor-pointer" />
+                </Link>
                 {/* 
                 <Button type="button" value="Apply for a Scholarship" className="btn btn-bg-primary border" />
                 <Button type="button" value="Become a Sponsor" className="btn btn-outline-primary" />
@@ -80,11 +88,12 @@ export default function DCNSP() {
                         </p>
                     </div>
                 </DCNSPCard>
-                <div className="grid grid-cols-2 gap-5">
+                <div className="grid md:grid-cols-2 gap-5">
                     <DCNSPCard title="Premium Learning Tracks" list={PLT} />
                     <DCNSPCard title="What Scholarship Recipients Receive" list={WSRR} />
                 </div>
             </div>
+            <FormModal showModal={showScholarship} setShowModal={setShowScholarship} />
         </section>
     )
 }
