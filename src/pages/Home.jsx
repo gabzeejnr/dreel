@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import Community from "../components/Community/Community";
 import MainComunity from "../components/Community/MainCommunity";
 import Enterprise from "../components/Enterprise/Enterprise";
@@ -11,6 +12,9 @@ export default function Home() {
     return (
         <>
             <Hero />
+            <div>
+                <Toaster />
+            </div>
             <Partners />
             <Programs />
             <Enterprise />

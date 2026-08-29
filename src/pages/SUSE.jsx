@@ -122,7 +122,7 @@ export default function SUSE() {
     ]
 
     return (
-        <section className="min-h-screen pt-20 sm:pt-5 px-3 lg:pt-30 lg:pb-25 bg-gray-50 lg:px-40">
+        <section className="min-h-screen pt-20 sm:pt-5 px-3 lg:pt-30 mb-10 lg:pb-25 bg-gray-50 lg:px-40">
             <div className="grid place-items-center">
                 <TopPill array={pillArray} />
             </div>
