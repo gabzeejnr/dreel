@@ -4,7 +4,7 @@
     --font-sans: "Inter", sans-serif;
     --font-heading: "Space Grotesk", sans-serif;
     --primary-color: #1D4ED8;
-    --primary-hover-color: #013AD6;
+    --primary-hover-color: #0032bb;
     --bg-primary-fade: #1D4ED81F;
 }
 
@@ -18,5 +18,5 @@ html {
 }
 
 body {
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'Helvetica Neue',sans-serif;
 }

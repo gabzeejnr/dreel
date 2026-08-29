@@ -2,7 +2,7 @@
     color: var(--primary-color);
 }
 
-.bg-primary{
+.bg-primary {
     background: var(--bg-primary-fade);
     color: var(--primary-color);
     font-weight: bold;
@@ -74,4 +74,14 @@
 .gray-text {
     color: #364153;
     font-size: 14px;
+}
+
+@media (max-width: 500px) {
+    .btn {
+        padding: .55rem 1.25rem;
+        font-size: .8375rem;
+        font-weight: 600;
+        line-height: 1.5;
+        border-radius: 800px;
+    }
 }

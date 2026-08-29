@@ -18,7 +18,7 @@ export default function Navbar() {
         { text: "Community", link: "/#community" },
         { text: "Scholarship", link: "/#scholarship" },
         { text: "DCNSP", link: "/dcnsp" },
-        { text: "SUSE Partnership", link: "/suse" },
+        { text: "SUSE Partnership", link: "/suse-partnership" },
         { text: "LMS", link: "/lms" }
     ];
     const smallNav = [

@@ -6,7 +6,7 @@ export default function FooterLinks({ title, array }) {
             <div className="flex flex-col gap-2">
                 <span className="inline-block font-semibold">{title}</span>
                 {array.map(arr => (
-                    <Link to={arr.link}>{arr.title}</Link>
+                    <Link to={arr.link} className="w-fit">{arr.title}</Link>
                 ))}
             </div>
         )

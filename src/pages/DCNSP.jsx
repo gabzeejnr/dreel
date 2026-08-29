@@ -7,6 +7,10 @@ import FormModal from "../components/Scholarship/FormModal";
 
 export default function DCNSP() {
 
+    // ============================================================================================
+    // STATES & VARIABLES =======================
+    // ============================================================================================
+
     const [showScholarship, setShowScholarship] = useState(false);
     const pillArray = ['DCNSP', 'Scholarship Program'];
     const PLT = [
@@ -32,7 +36,7 @@ export default function DCNSP() {
     ]
 
     return (
-        <section className="min-h-screen pt-20 px-3 lg:pt-30 bg-gray-50 lg:px-40">
+        <section className="min-h-screen pt-20 sm:pt-5 px-3 lg:pt-30 bg-gray-50 lg:px-40">
             <div className="grid place-items-center">
                 <TopPill array={pillArray} />
             </div>
@@ -92,6 +96,14 @@ export default function DCNSP() {
                     <DCNSPCard title="Premium Learning Tracks" list={PLT} />
                     <DCNSPCard title="What Scholarship Recipients Receive" list={WSRR} />
                 </div>
+                <DCNSPCard title="Industry-Sponsored Scholarship Opportunities">
+                    <p className="text-gray-500 text-[15px] mb-2">
+                        The Dreel Cloud Native Scholarship Program is designed to grow through collaboration with forward-thinking organizations. Interested organizations are invited to partner with Dreel Academy to support skills development across the continent.
+                    </p>
+                    <p className="text-gray-500 text-[15px] mb-2">
+                        We also recognize outstanding participants with internship placements, community ambassador roles, learning devices, cloud credits, and certification vouchers where available.
+                    </p>
+                </DCNSPCard>
             </div>
             <FormModal showModal={showScholarship} setShowModal={setShowScholarship} />
         </section>
