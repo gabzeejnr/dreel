@@ -32,6 +32,7 @@ export const socialMedia = [
     },
     {
         icon: faWhatsapp,
-        link: "https://wa.me/234703770654"
+        link: "https://wa.me/2347037706544",
+        color: "#009900"
     }
 ]

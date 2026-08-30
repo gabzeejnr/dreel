@@ -50,7 +50,7 @@ export default function Scholarship() {
                 </div>
                 <div className="mt-10">
                     <Button type="button" value="Apply for Scholarship" className="btn btn-bg-primary"
-                        onClick={() => setShowScholarship(true)} /></div>
+                        /* onClick={() => setShowScholarship(true)} */ /></div>
             </div>
             <div className="flex-1 grid place-items-center">
                 <Card />

@@ -15,19 +15,19 @@ export default function Footer() {
         "Products", [
             {
                 title: "Programs",
-                link: "/programs"
+                link: "/#programs"
             },
             {
                 title: "Enterprise Services",
-                link: "/enterprise"
+                link: "/#enterprise"
             },
             {
                 title: "Scholarship",
-                link: "/scholarship"
+                link: "/#scholarship"
             },
             {
                 title: "Community",
-                link: "/community"
+                link: "/#community"
             }
         ]]
 

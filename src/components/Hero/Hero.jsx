@@ -39,7 +39,7 @@ export default function Hero() {
                     </BottomInfo>
                 </div>
             </div>
-            <div className="flex-1 flex items-center justify-center z-1 relative mb-10 md:px-10">
+            <div className="flex-1 flex items-center justify-center z relative mb-10 md:px-10">
                 <div className="flex absolute bottom-3 -left-3 sm:left-15 md:left-25 lg:left-5 z-4">
                     <HoverAboveCard title="200+ Courses" info="Available Now">
                         <BookOpen size={20} color="#1D4ED8" />
