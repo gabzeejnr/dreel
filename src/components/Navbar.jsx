@@ -49,7 +49,14 @@ export default function Navbar() {
                             const isRoute = nav.link.startsWith("/") && !nav.link.includes("#")
 
                             return isRoute ? (
-                                <NavLink key={nav.text} to={nav.link}>{nav.text}</NavLink>
+                                nav.link === "/lms"
+                                    ? <a className="overflow-hidden inline-flex justify-between py-3 px-8">{nav.text}
+                                        <Button type="button" value="&gt;" className="text-black" />
+                                    </a>
+                                    : <NavLink to={nav.link} key={nav.link} className="overflow-hidden inline-flex justify-between py-3 px-8"
+                                        onClick={() => setIsOpen(false)}>{nav.text}
+                                        <Button type="button" value="&gt;" className="text-black" />
+                                    </NavLink>
                             ) : (
                                 <a key={nav.text} href={nav.link}>{nav.text}</a>
                             )
@@ -57,7 +64,7 @@ export default function Navbar() {
                     </div>
                     <div className="right-nav h-full min-w-60 flex px-5 gap-6 rounded-[2.5rem] items-center justify-around bg-[#202020]">
                         {smallNav.map(nav => (
-                            <a href={nav.link} key={nav.text}>{nav.text}</a>
+                            <a key={nav.text}>{nav.text}</a>
                         ))}
                     </div>
                 </div>
@@ -80,10 +87,14 @@ export default function Navbar() {
                         {navItems.map(nav => {
                             const isRoute = nav.link.startsWith("/") && !nav.link.includes("#")
                             return isRoute
-                                ? <NavLink to={nav.link} key={nav.link} className="overflow-hidden inline-flex justify-between py-3 px-8"
-                                    onClick={() => setIsOpen(false)}>{nav.text}
-                                    <Button type="button" value="&gt;" className="text-black" />
-                                </NavLink>
+                                ? nav.link === "/lms"
+                                    ? <a className="overflow-hidden inline-flex justify-between py-3 px-8">{nav.text}
+                                        <Button type="button" value="&gt;" className="text-black" />
+                                    </a>
+                                    : <NavLink to={nav.link} key={nav.link} className="overflow-hidden inline-flex justify-between py-3 px-8"
+                                        onClick={() => setIsOpen(false)}>{nav.text}
+                                        <Button type="button" value="&gt;" className="text-black" />
+                                    </NavLink>
                                 : <a href={nav.link} className="overflow-hidden inline-flex justify-between py-3 px-8"
                                     onClick={() => setIsOpen(false)}>{nav.text}
                                     <Button type="button" value="&gt;" className="text-black" />
