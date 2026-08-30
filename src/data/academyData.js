@@ -1,4 +1,4 @@
-import { faInstagram, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons"
+import { faInstagram, faWhatsapp, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope, faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons"
 
 export const contacts = [
@@ -8,7 +8,7 @@ export const contacts = [
     },
     {
         icon: faPhone,
-        detail: "+234 (807) 755-3373"
+        detail: "+234 (703) 770-6544"
     },
     {
         icon: faLocationDot,
@@ -29,5 +29,9 @@ export const socialMedia = [
         icon: faYoutube,
         link: "https://youtube.com/@dreelacademy",
         color: "rgba(255, 0, 0, .7)"
+    },
+    {
+        icon: faWhatsapp,
+        link: "https://wa.me/234703770654"
     }
 ]

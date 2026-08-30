@@ -7,6 +7,7 @@ import Hiring from "../components/Hiring/Hiring";
 import Partners from "../components/Partners/Partners";
 import Programs from "../components/Programs/Programs";
 import Scholarship from "../components/Scholarship/Scholarship";
+import BackToTop from "../components/BackToTop";
 
 export default function Home() {
     return (
@@ -22,6 +23,7 @@ export default function Home() {
             <Community />
             <MainComunity />
             <Hiring />
+            {/* <BackToTop top={"/#home-hero"} /> */}
         </>
     )
 }

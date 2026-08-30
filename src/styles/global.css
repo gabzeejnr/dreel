@@ -80,6 +80,13 @@
     font-size: 14px;
 }
 
+.back-to-top::after{
+    position: absolute;
+    height: 10px;
+    background: black;
+    width: 200px;
+}
+
 @media (max-width: 500px) {
     .btn {
         padding: .55rem 1.25rem;

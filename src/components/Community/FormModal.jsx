@@ -54,11 +54,10 @@ export default function FormModal({ showModal, setShowModal }) {
         } catch (err) {
             if (axios.isAxiosError(err)) {
                 console.log(err.response?.data?.error)
-                toast.error(err?.response?.data?.error)
+                toast.error(err?.response?.data?.error || "Something went wrong. Please try again")
             } else {
                 toast.error("Something went wrong. Please try again")
             }
-
         } finally {
             setLoading(false);
         }
