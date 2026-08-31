@@ -96,7 +96,7 @@ export default function Footer() {
             }
         ]]
 
-    const arrayOfArrays = [PRO, COM, SUP, PROG]
+    const arrayOfArrays = [PRO, COM, SUP, PROG];
 
     return (
         <footer id="footer">

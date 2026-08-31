@@ -50,7 +50,7 @@ export default function DCNSP() {
             </div>
             <div className="flex gap-3 mt-4 justify-center text-sm px-10 items-center">
                 <Button type="button" value="Apply for a Scholarship" className="btn btn-bg-primary "
-                    onClick={() => setShowScholarship(true)} />
+                    /* onClick={() => setShowScholarship(true)} */ />
                 <Button type="button" value="Become a Sponsor" className="btn btn-outline-primary" />
                 <Link to="https://docs.google.com/forms/d/e/1FAIpQLSekp3BnTuhQattaUHb317udDtJkzaCs2xIY-ReeWBBEUJR5wg/viewform">
                     <Button type="button" value="Wishlist" className="btn btn-outline-primary cursor-pointer" />

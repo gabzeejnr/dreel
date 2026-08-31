@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom"
+import { Link, NavLink, useNavigate } from "react-router-dom"
 import dReelLogo from "../assets/images/dreel-academy-logo.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
@@ -11,6 +11,7 @@ export default function Navbar() {
     // STATES & VARIABLES =======================
     // ============================================================================================
 
+    const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
     const navItems = [
         { text: "Programs", link: "/#programs" },
@@ -31,6 +32,24 @@ export default function Navbar() {
     // EFFECTS & FUNCTIONS ======================
     // ============================================================================================
 
+    function navigateToSection(sectionId){
+        if(location.pathname !== "/"){
+            navigate("/");
+            setTimeout(() => {
+                document.getElementById(sectionId)?.scrollIntoView({
+                    behavior: "smooth"
+                })
+            }, 500);
+        } else {
+            document.getElementById(sectionId)?.scrollIntoView({
+                behavior: "smooth"
+            })
+        }
+    }
+    function navigateToPage(page, top){
+        
+    }
+
     function toggleNavbar() {
         setIsOpen(prev => !prev);
         console.log(isOpen);
@@ -39,26 +58,26 @@ export default function Navbar() {
     return (
         <>
             {/* DESKTOP NAV */}
-            <nav className="hidden lg:flex px-10 fixed w-full h-15 justify-center top-8 text-white z-50">
-                <div className="container h-full flex justify-between items-center">
+            <nav className="hidden lg:flex lg:px-10 fixed w-full h-15 justify-center items-center top-8 text-white z-50">
+                <div className="container h-full flex justify-between items-center lg:gap-10">
                     <div className="left bg-[#202020] h-full flex items-center gap-10 rounded-4xl px-8">
-                        <Link to="/home" className="h-full flex">
-                            <img src={dReelLogo} alt="Dreel Academy" className="w-full" />
+                        <Link to="/home" className="flex flex-1">
+                            <img src={dReelLogo} alt="Dreel Academy" className="w-full h-auto scale-200" />
                         </Link>
                         {navItems.map(nav => {
                             const isRoute = nav.link.startsWith("/") && !nav.link.includes("#")
 
                             return isRoute ? (
                                 nav.link === "/lms"
-                                    ? <a className="overflow-hidden inline-flex justify-between py-3 px-8">{nav.text}
-                                        <Button type="button" value="&gt;" className="text-black" />
+                                    ? <a className="flex-1 overflow-hidden inline-flex justify-between py-3 px-8">{nav.text}
                                     </a>
-                                    : <NavLink to={nav.link} key={nav.link} className="overflow-hidden inline-flex justify-between py-3 px-8"
-                                        onClick={() => setIsOpen(false)}>{nav.text}
-                                        <Button type="button" value="&gt;" className="text-black" />
+                                    : <NavLink to={nav.link} key={nav.link} className="flex-1 text-[14px] text-center overflow-hidden inline-flex justify-between py-3 px-8">{nav.text}
                                     </NavLink>
                             ) : (
-                                <a key={nav.text} href={nav.link}>{nav.text}</a>
+                                <Button key={nav.text} className="flex-1 cursor-pointer"
+                                onClick={()=> {
+                                    navigateToSection(nav.link.slice(2))
+                                }}>{nav.text}</Button>
                             )
                         })}
                     </div>
@@ -95,10 +114,13 @@ export default function Navbar() {
                                         onClick={() => setIsOpen(false)}>{nav.text}
                                         <Button type="button" value="&gt;" className="text-black" />
                                     </NavLink>
-                                : <a href={nav.link} className="overflow-hidden inline-flex justify-between py-3 px-8"
-                                    onClick={() => setIsOpen(false)}>{nav.text}
-                                    <Button type="button" value="&gt;" className="text-black" />
-                                </a>
+                                : <Button href={nav.link} className="overflow-hidden cursor-pointer inline-flex justify-between py-3 px-8"
+                                    onClick={() => {
+                                        setIsOpen(false);
+                                        navigateToSection(nav.link.slice(2))
+                                    }}>{nav.text}
+                                    <span className="text-black">&gt;</span>
+                                </Button>
                         })}
                         <div className="flex gap-4 justify-center">
                             {smallNav.map(nav => (
