@@ -32,8 +32,8 @@ export default function Navbar() {
     // EFFECTS & FUNCTIONS ======================
     // ============================================================================================
 
-    function navigateToSection(sectionId){
-        if(location.pathname !== "/"){
+    function navigateToSection(sectionId) {
+        if (location.pathname !== "/") {
             navigate("/");
             setTimeout(() => {
                 document.getElementById(sectionId)?.scrollIntoView({
@@ -46,8 +46,13 @@ export default function Navbar() {
             })
         }
     }
-    function navigateToPage(page, top){
-        
+    function navigateToPage(page, top) {
+        navigate(page);
+        setTimeout(() => {
+            document.getElementById(top)?.scrollIntoView({
+                behavior: "instant"
+            })
+        }, 500);
     }
 
     function toggleNavbar() {
@@ -59,29 +64,33 @@ export default function Navbar() {
         <>
             {/* DESKTOP NAV */}
             <nav className="hidden lg:flex lg:px-10 fixed w-full h-15 justify-center items-center top-8 text-white z-50">
-                <div className="container h-full flex justify-between items-center lg:gap-10">
-                    <div className="left bg-[#202020] h-full flex items-center gap-10 rounded-4xl px-8">
+                <div className="h-full flex justify-between items-center lg:gap-3">
+                    <div className="left bg-[#202020] h-full flex items-center lg:gap-5 lg:text-[15px] rounded-4xl lg:pl-4 xl:px-8">
                         <Link to="/home" className="flex flex-1">
-                            <img src={dReelLogo} alt="Dreel Academy" className="w-full h-auto scale-200" />
+                            <img src={dReelLogo} alt="Dreel Academy" className="w-full h-auto" />
                         </Link>
                         {navItems.map(nav => {
                             const isRoute = nav.link.startsWith("/") && !nav.link.includes("#")
 
                             return isRoute ? (
                                 nav.link === "/lms"
-                                    ? <a className="flex-1 overflow-hidden inline-flex justify-between py-3 px-8">{nav.text}
+                                    ? <a className="flex-1 xl:py-3 lg:px-3 text-center xl:px-4" key={nav.link}>{nav.text}
                                     </a>
-                                    : <NavLink to={nav.link} key={nav.link} className="flex-1 text-[14px] text-center overflow-hidden inline-flex justify-between py-3 px-8">{nav.text}
-                                    </NavLink>
+                                    : <button key={nav.link} className="flex-1 cursor-pointer"
+                                        onClick={() => {
+                                            navigateToPage(nav.link, "top")
+                                        }}>{nav.text}
+                                    </button>
                             ) : (
                                 <Button key={nav.text} className="flex-1 cursor-pointer"
-                                onClick={()=> {
-                                    navigateToSection(nav.link.slice(2))
-                                }}>{nav.text}</Button>
+                                value={nav.text}
+                                    onClick={() => {
+                                        navigateToSection(nav.link.slice(2))
+                                    }} />
                             )
                         })}
                     </div>
-                    <div className="right-nav h-full min-w-60 flex px-5 gap-6 rounded-[2.5rem] items-center justify-around bg-[#202020]">
+                    <div className="right-nav h-full min-w-50 flex xl:px-5 xl:gap-5 rounded-[2.5rem] items-center justify-around bg-[#202020]">
                         {smallNav.map(nav => (
                             <a key={nav.text}>{nav.text}</a>
                         ))}
@@ -107,14 +116,14 @@ export default function Navbar() {
                             const isRoute = nav.link.startsWith("/") && !nav.link.includes("#")
                             return isRoute
                                 ? nav.link === "/lms"
-                                    ? <a className="overflow-hidden inline-flex justify-between py-3 px-8">{nav.text}
+                                    ? <a className="overflow-hidden inline-flex justify-between py-3 px-8" key={nav.link}>{nav.text}
                                         <Button type="button" value="&gt;" className="text-black" />
                                     </a>
                                     : <NavLink to={nav.link} key={nav.link} className="overflow-hidden inline-flex justify-between py-3 px-8"
                                         onClick={() => setIsOpen(false)}>{nav.text}
                                         <Button type="button" value="&gt;" className="text-black" />
                                     </NavLink>
-                                : <Button href={nav.link} className="overflow-hidden cursor-pointer inline-flex justify-between py-3 px-8"
+                                : <Button key={nav.link} className="overflow-hidden cursor-pointer inline-flex justify-between py-3 px-8"
                                     onClick={() => {
                                         setIsOpen(false);
                                         navigateToSection(nav.link.slice(2))
@@ -124,7 +133,7 @@ export default function Navbar() {
                         })}
                         <div className="flex gap-4 justify-center">
                             {smallNav.map(nav => (
-                                <Button type="button" className={`btn ${nav.text.includes("career") ? "btn-outline-bg" : "btn-bg-primary"}`} value={nav.text} />
+                                <Button type="button" key={nav.link} className={`btn ${nav.text.includes("career") ? "btn-outline-bg" : "btn-bg-primary"}`} value={nav.text} />
                             ))}
                         </div>
                     </nav>

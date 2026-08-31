@@ -37,7 +37,7 @@ export default function DCNSP() {
 
     return (
         <section className="min-h-screen pt-20 sm:pt-5 px-3 lg:pt-30 bg-gray-50 lg:px-40">
-            <div className="grid place-items-center">
+            <div className="grid place-items-center" id="top">
                 <TopPill array={pillArray} />
             </div>
             <div className="text-center flex flex-col items-center mt-5">

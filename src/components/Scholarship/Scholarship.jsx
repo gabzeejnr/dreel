@@ -53,7 +53,9 @@ export default function Scholarship() {
                         /* onClick={() => setShowScholarship(true)} */ /></div>
             </div>
             <div className="flex-1 grid place-items-center">
-                <Card />
+                <div data-aos="slide-right">
+                    <Card />
+                </div>
             </div>
             <FormModal showModal={showScholarship} setShowModal={setShowScholarship} />
         </section>

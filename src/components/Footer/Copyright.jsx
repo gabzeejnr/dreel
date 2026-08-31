@@ -14,7 +14,7 @@ export default function Copyright() {
             <span className=" lg:text-[17px]">&copy;{year} Dreel Limited. All rights reserved. Building Africa's Cloud-Native Engineering Talent Ecosystem.</span>
             <div className="inline-flex gap-2">
                 {socialMedia.map(s => (
-                    <a href={s.link}>
+                    <a href={s.link} key={s.link}>
                         <div className="h-10 w-10 grid place-items-center text-2xl">
                             <FontAwesomeIcon icon={s.icon} color={s.color} />
                         </div>

@@ -33,7 +33,7 @@ export default function Hiring() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:justify-center px-5 md:px-10 gap-5 lg:px-13">
                 {data.map(d => (
-                    <HireCard key={d.link} text={d.text} title={d.title} available={d.available} link={d.link} />
+                    <HireCard key={d.title} text={d.text} title={d.title} available={d.available} link={d.link} />
                 ))}
             </div>
         </section>

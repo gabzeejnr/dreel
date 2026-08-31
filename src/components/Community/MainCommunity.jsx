@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react"
-import { Code2, Square, Users } from "lucide-react"
-import ComCard from "./ComCard"
-import Button from "../Button"
-import FormModal from "./FormModal"
+import { useState } from "react";
+import { Code2, Square, Users } from "lucide-react";
+import ComCard from "./ComCard";
+import Button from "../Button";
+import FormModal from "./FormModal";
 
 export default function MainComunity() {
 

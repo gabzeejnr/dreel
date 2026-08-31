@@ -62,13 +62,13 @@ export default function Community() {
             </div>
             <div className="flex-1 relative rounded-4xl grid place-items-center lg:px-20"
                 data-aos="fade-down">
-                <div className="absolute z-3 -top-5 right-0">
+                <div className="absolute z-3 -top-5 right-0" data-aos="slide-right">
                     <HoverAboveCard title="24/7 Support" info="Always here">
                         <MessageCircle color="#1D4ED8" />
                     </HoverAboveCard>
                 </div>
                 <RightImage src={community} alt={"DReel Community"} />
-                <div className="absolute z-3 bottom-0 left-10">
+                <div className="absolute z-3 bottom-0 left-10" data-aos="slide-left">
                     <HoverAboveCard title="150+ Countries" info="Worldwide reach">
                         <Globe color="#1D4ED8" />
                     </HoverAboveCard>

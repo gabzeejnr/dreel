@@ -23,7 +23,6 @@ export default function Home() {
             <Community />
             <MainComunity />
             <Hiring />
-            {/* <BackToTop top={"/#home-hero"} /> */}
         </>
     )
 }

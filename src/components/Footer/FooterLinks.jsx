@@ -27,9 +27,9 @@ export default function FooterLinks({ title, array }) {
 
                     return isRoute
                         ? (
-                            <a className="w-fit">{arr.title}</a>
+                            <a className="w-fit" key={arr.link}>{arr.title}</a>
                         ) : (
-                            <Button className="w-fit cursor-pointer"
+                            <Button className="w-fit cursor-pointer" key={arr.link}
                                 onClick={() => navigateToSection(arr.link.slice(2))}>{arr.title}</Button>
                         )
                 })}

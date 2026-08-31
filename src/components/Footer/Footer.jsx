@@ -128,8 +128,8 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className="pl-5 flex-2 grid grid-cols-2 sm:grid-cols-3 gap-10 lg:grid-cols-4 lg:place-items-center">
-                        {arrayOfArrays.map(aoa => (
-                            <FooterLinks title={aoa[0]} array={aoa[1]} />
+                        {arrayOfArrays.map((aoa, i) => (
+                            <FooterLinks title={aoa[0]} array={aoa[1]} key={i + 9} />
                         ))}
                     </div>
                 </div>
