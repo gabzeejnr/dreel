@@ -1,9 +1,11 @@
-import { useState } from "react";
+import {  useState } from "react";
 import { Link } from "react-router-dom";
 import TopPill from "../components/Hero/TopPill";
 import Button from "../components/Button";
-import DCNSPCard from "../components/DCNSPCard";
+import DCNSPCard from "../components/DCNSP/DCNSPCard";
 import FormModal from "../components/Scholarship/FormModal";
+import { PLT, WSRR } from "../components/DCNSP/data";
+import { useTitle } from "../hooks/title.hook";
 
 export default function DCNSP() {
 
@@ -13,27 +15,13 @@ export default function DCNSP() {
 
     const [showScholarship, setShowScholarship] = useState(false);
     const pillArray = ['DCNSP', 'Scholarship Program'];
-    const PLT = [
-        "SUSE Linux Enterprise Administration",
-        "Kubernetes Engineering",
-        "Cloud Native Engineering",
-        "DevOps Engineering",
-        "Platform Engineering",
-        "DevSecOps",
-        "Site Reliability Engineering (SRE)",
-        "AI Infrastructure Engineering"
-    ]
-    const WSRR = [
-        "Instructor-led live training",
-        "Weekly mentorship and coaching sessions",
-        "Hands-on cloud laboratories",
-        "Real-world industry projects",
-        "Career development workshops",
-        "Technical mock interviews",
-        "Exclusive Dreel engineering community",
-        "Digital certificates of completion",
-        "Internship opportunities with Dreel and partners"
-    ]
+
+
+    // ============================================================================================
+    // EFFECTS & FUNCTIONS ======================
+    // ============================================================================================
+
+    useTitle("DCNSP")
 
     return (
         <section className="min-h-screen pt-20 sm:pt-5 px-3 lg:pt-30 bg-gray-50 lg:px-40">
@@ -48,17 +36,15 @@ export default function DCNSP() {
                     One of our flagship initiatives designed to remove financial barriers and create opportunities for thousands of aspiring technology professionals across Africa.
                 </p>
             </div>
-            <div className="flex gap-3 mt-4 justify-center text-sm px-10 items-center">
-                <Button type="button" value="Apply for a Scholarship" className="btn btn-bg-primary "
+            <div className="flex flex-col sm:flex-row gap-3 mt-4 text-sm items-center sm:justify-center">
+                <div className="flex gap-3">
+                    <Button type="button" value="Apply for a Scholarship" className="btn btn-bg-primary sm:text-base"
                     /* onClick={() => setShowScholarship(true)} */ />
-                <Button type="button" value="Become a Sponsor" className="btn btn-outline-primary" />
+                    <Button type="button" value="Become a Sponsor" className="btn btn-outline-primary sm:text-base" />
+                </div>
                 <Link to="https://docs.google.com/forms/d/e/1FAIpQLSekp3BnTuhQattaUHb317udDtJkzaCs2xIY-ReeWBBEUJR5wg/viewform">
                     <Button type="button" value="Wishlist" className="btn btn-outline-primary cursor-pointer" />
                 </Link>
-                {/* 
-                <Button type="button" value="Apply for a Scholarship" className="btn btn-bg-primary border" />
-                <Button type="button" value="Become a Sponsor" className="btn btn-outline-primary" />
-                <Button type="button" value="Wishlist" className="btn btn-outline-primary" /> */}
             </div>
             <div className="cards flex flex-col gap-5 mt-15 px-3 py-10">
                 <DCNSPCard title="Program Vision">

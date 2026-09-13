@@ -6,7 +6,7 @@ export default function ListCard({ title, text, list }) {
             <ul className="gray-text ml-5 leading-7">
                 {list && (
                     list.map(li => (
-                        <li key={li[0]} className="list-disc">{li}</li>
+                        <li key={li} className="list-disc">{li}</li>
                     ))
                 )}
             </ul>

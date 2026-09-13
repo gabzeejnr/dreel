@@ -4,99 +4,13 @@ import dReelLogo from "../../assets/images/dreel-academy-logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Copyright from "./Copyright";
 import FooterLinks from "./FooterLinks";
+import { arrayOfArrays } from "./data";
 
 export default function Footer() {
 
     // ============================================================================================
     // STATES & VARIABLES =======================
     // ============================================================================================
-
-    const PRO = [
-        "Products", [
-            {
-                title: "Programs",
-                link: "/#programs"
-            },
-            {
-                title: "Enterprise Services",
-                link: "/#enterprise"
-            },
-            {
-                title: "Scholarship",
-                link: "/#scholarship"
-            },
-            {
-                title: "Community",
-                link: "/#community"
-            }
-        ]]
-
-    const COM = [
-        "Company", [
-            {
-                title: "About Us",
-                link: "/about"
-            },
-            {
-                title: "Careers",
-                link: "/careers"
-            },
-            {
-                title: "Blog",
-                link: "/blog"
-            },
-            {
-                title: "Press",
-                link: "/press"
-            }
-        ]]
-
-    const SUP = [
-        "Support", [
-            {
-                title: "Help Center",
-                link: "/help"
-            },
-            {
-                title: "Contact Us",
-                link: "/contact"
-            },
-            {
-                title: "Privacy Policy",
-                link: "/privacy-policy"
-            },
-            {
-                title: "Terms of Service",
-                link: "/terms-of-service"
-            }
-        ]]
-
-    const PROG = [
-        "Programs", [
-            {
-                title: "Cloud Native",
-                link: "/programs/cloud-native-engineering"
-            },
-
-            {
-                title: "DevOps Engineering",
-                link: "/programs/devops-engineering"
-            },
-            {
-                title: "Linux Systems",
-                link: "/programs/linux-systems-engineering"
-            },
-            {
-                title: "Platform Engineering",
-                link: "/programs/platform-engineering"
-            },
-            {
-                title: "Kubernetes Engineering",
-                link: "/programs/kubernetes-engineering"
-            }
-        ]]
-
-    const arrayOfArrays = [PRO, COM, SUP, PROG];
 
     return (
         <footer id="footer">
@@ -127,7 +41,7 @@ export default function Footer() {
                             </span>
                         </div>
                     </div>
-                    <div className="pl-5 flex-2 grid grid-cols-2 sm:grid-cols-3 gap-10 lg:grid-cols-4 lg:place-items-center">
+                    <div className="pl-5 flex-2 grid grid-cols-2 sm:grid-cols-3 gap-10 md:grid-cols-4 lg:place-items-center">
                         {arrayOfArrays.map((aoa, i) => (
                             <FooterLinks title={aoa[0]} array={aoa[1]} key={i + 9} />
                         ))}

@@ -6,7 +6,7 @@ export default function DCNSPCard({ title, children, list }) {
             {list && (
                 <ul className="gray-text ml-5 leading-7">
                     {list.map(li => (
-                        <li className="list-disc">{li}</li>
+                        <li className="list-disc" key={li}>{li}</li>
                     ))}
                 </ul>
             )}
