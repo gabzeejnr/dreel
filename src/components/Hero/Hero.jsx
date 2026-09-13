@@ -10,7 +10,7 @@ import girl from "../../assets/images/hero-image.png";
 
 export default function Hero() {
     return (
-        <section id="home-hero" className="">
+        <section id="home-hero">
             <div className="background-overlay relative flex flex-col lg:flex-row text-white pt-25 pb-10 lg:pt-30 px-5 lg:px-20 gap-10 items-center">
                 <div className="flex-1 flex flex-col justify-center gap-1 z-1 relative">
                     <TopPill />

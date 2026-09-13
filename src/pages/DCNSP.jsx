@@ -6,6 +6,7 @@ import DCNSPCard from "../components/DCNSP/DCNSPCard";
 import FormModal from "../components/Scholarship/FormModal";
 import { PLT, WSRR } from "../components/DCNSP/data";
 import { useTitle } from "../hooks/title.hook";
+import { useGoToTopOnLoad } from "../hooks/load.hook";
 
 export default function DCNSP() {
 
@@ -21,7 +22,8 @@ export default function DCNSP() {
     // EFFECTS & FUNCTIONS ======================
     // ============================================================================================
 
-    useTitle("DCNSP")
+    useTitle("DCNSP");
+    useGoToTopOnLoad("dcnsp")
 
     return (
         <section className="min-h-screen pt-20 sm:pt-5 px-3 lg:pt-30 bg-gray-50 lg:px-40">

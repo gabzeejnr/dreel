@@ -68,7 +68,7 @@ export default function Community() {
                     </HoverAboveCard>
                 </div>
                 <RightImage src={community} alt={"DReel Community"} />
-                <div className="absolute z-3 bottom-0 left-10" data-aos="slide-left">
+                <div className="absolute z-3 bottom-0 left-10" data-aos="slide-down">
                     <HoverAboveCard title="150+ Countries" info="Worldwide reach">
                         <Globe color="#1D4ED8" />
                     </HoverAboveCard>

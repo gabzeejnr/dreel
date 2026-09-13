@@ -6,13 +6,23 @@ import ListCard from "../components/SUSE/ListCard";
 import Checks from "../components/SUSE/Checks";
 import { useTitle } from "../hooks/title.hook";
 import { pillArray, card1, card2, checks } from "../components/SUSE/data";
+import { useGoToTopOnLoad } from "../hooks/load.hook";
 
 export default function SUSE() {
+
+    // ============================================================================================
+    // STATES & VARIABLES =========================================================================
+    // ============================================================================================
 
     const navigate = useNavigate()
 
 
-    useTitle("SUSE Partnership")
+    // ============================================================================================
+    // EFFECTS & FUNCTIONS ========================================================================
+    // ============================================================================================
+
+    useTitle("SUSE Partnership");
+    useGoToTopOnLoad("suse-partnership");
 
     return (
         <section className="min-h-screen pt-20 sm:pt-5 px-3 lg:pt-30 mb-10 lg:pb-25 bg-gray-50 lg:px-40">

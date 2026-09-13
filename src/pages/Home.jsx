@@ -9,10 +9,12 @@ import Scholarship from "../components/Scholarship/Scholarship";
 import BackToTop from "../components/BackToTop";
 import { Toaster } from "react-hot-toast";
 import { useTitle } from "../hooks/title.hook";
+import { useGoToTopOnLoad } from "../hooks/load.hook";
 
 export default function Home() {
 
-    useTitle("Cloud Engineering Academy")
+    useTitle("Cloud Engineering Academy");
+    useGoToTopOnLoad("home")
 
     return (
         <>
